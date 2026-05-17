@@ -15,8 +15,9 @@ Functionaliteiten:
 
 Gebruikte API:
 
-OSRS Grand Exchange Database API — https://runescape.wiki/w/Application_programming_interface#Grand_Exchange_Database_API
-
+OSRS wiki Real-time Prices API https://oldschool.runescape.wiki/w/RuneScape:Real-time_Prices
+- https://prices.runescape.wiki/api/v1/osrs/latest
+- https://prices.runescape.wiki/api/v1/osrs/mapping
 
 Technische vereisten:
 
