@@ -63,6 +63,11 @@ Installatie:
 -  npm run dev
 
 Screenshots:
+<img width="1920" height="1080" alt="Screenshot (11)" src="https://github.com/user-attachments/assets/71dd4f65-35dc-4e88-8eb8-52e270ff169d" />
+<img width="1920" height="1080" alt="Screenshot (13)" src="https://github.com/user-attachments/assets/b8676800-100b-49c6-b5f3-4714d392bbab" />
+<img width="1920" height="1080" alt="Screenshot (12)" src="https://github.com/user-attachments/assets/734448f2-2011-4344-bb66-a5946737b708" />
+<img width="1920" height="1080" alt="Screenshot (14)" src="https://github.com/user-attachments/assets/1faeb3f9-21d7-426f-8239-2bcf98941370" />
+<img width="1920" height="1080" alt="Screenshot (15)" src="https://github.com/user-attachments/assets/5a92a10d-6989-49c5-b100-d8bb16c76a1a" />
 
 
 Bronnen:
