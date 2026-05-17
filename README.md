@@ -59,8 +59,11 @@ Installatie:
 download de code van https://github.com/nathanroelants/runescape_item_browser
 extract de files
 open de folder in terminal
+
 run:
+
 npm install
+
 npm run dev
 
 Screenshots:
