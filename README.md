@@ -15,7 +15,7 @@ Functionaliteiten:
 
 Gebruikte API:
 
-OSRS Wiki Prices API — https://runescape.wiki/w/Application_programming_interface#Grand_Exchange_Database_API
+OSRS Grand Exchange Database API — https://runescape.wiki/w/Application_programming_interface#Grand_Exchange_Database_API
 
 
 Technische vereisten:
@@ -60,8 +60,8 @@ download de code van https://github.com/nathanroelants/runescape_item_browser
 extract de files
 open de folder in terminal
 run:
-    npm install
-    npm run dev
+npm install
+npm run dev
 
 Screenshots:
 
