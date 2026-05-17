@@ -16,8 +16,8 @@ Functionaliteiten:
 Gebruikte API:
 
 OSRS wiki Real-time Prices API https://oldschool.runescape.wiki/w/RuneScape:Real-time_Prices
--https://prices.runescape.wiki/api/v1/osrs/latest
--prices.runescape.wiki/api/v1/osrs/mapping
+- https://prices.runescape.wiki/api/v1/osrs/latest
+- prices.runescape.wiki/api/v1/osrs/mapping
 
 
 Technische vereisten:
