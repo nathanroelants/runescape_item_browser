@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RS Item Browser</title>
+  <link rel="stylesheet" href="/src/css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <h1>RS Item Browser</h1>
+      <p class="subtitle">Search the Grand Exchange</p>
+    </div>
+
+    <div class="controls">
+      <input type="text" id="searchInput" placeholder="Search items..." />
+
+      <select id="categoryFilter">
+        <option value="">All Categories</option>
+      </select>
+
+      <select id="sortSelect">
+        <option value="name-asc">Name A→Z</option>
+        <option value="name-desc">Name Z→A</option>
+        <option value="price-asc">Price Low→High</option>
+        <option value="price-desc">Price High→Low</option>
+      </select>
+
+      <button id="themeToggle" title="Toggle theme">🌑</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="stats-bar">
+      <span id="itemCount">Loading items...</span>
+      <span id="favCount">❤️ <span id="favNum">0</span> favourites</span>
+    </div>
+
+    <div class="tabs">
+      <button class="tab active" data-tab="items">All Items</button>
+      <button class="tab" data-tab="favourites">My Favourites</button>
+    </div>
+
+    <div id="itemsGrid" class="items-grid"></div>
+
+    <div id="favouritesPanel" class="hidden">
+      <div id="favouritesGrid" class="items-grid"></div>
+      <p id="noFavMsg" class="no-fav-msg hidden">No favourites yet. Click ❤️ on an item!</p>
+    </div>
+
+    <div id="loadingMsg" class="status-msg">Loading items from the Grand Exchange...</div>
+    <div id="errorMsg" class="status-msg error hidden">Failed to load items. Please try again.</div>
+  </main>
+
+  <div id="modal" class="modal hidden">
+    <div class="modal-content">
+      <button id="modalClose">✕</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+  <div id="noteModal" class="modal hidden">
+    <div class="modal-content small">
+      <button id="noteClose">✕</button>
+      <h3>Add a note</h3>
+      <textarea id="noteInput" placeholder="Write a note about this item..." maxlength="200"></textarea>
+      <p id="noteError" class="form-error hidden">Note cannot be empty!</p>
+      <button id="noteSave">Save note</button>
+    </div>
+  </div>
+
+  <script type="module" src="/src/js/main.js"></script>
+</body>
+</html>
