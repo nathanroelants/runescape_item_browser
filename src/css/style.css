@@ -1,17 +1,23 @@
+/* =============================================
+   CSS VARIABELEN
+   ============================================= */
+
+/* Standaard thema (donker) */
 :root {
-  --bg: #1a1a1a;
-  --bg2: #242424;
-  --card: #2a2a2a;
-  --border: #4a3a1a;
-  --gold: #c8a84b;
-  --gold-light: #e8c86b;
-  --text: #e0d5b0;
-  --text-dim: #9a8a6a;
-  --red: #c0392b;
-  --green: #27ae60;
-  --shadow: 0 2px 8px rgba(0,0,0,0.5);
+  --bg: #1a1a1a;          /* Achtergrondkleur pagina */
+  --bg2: #242424;         /* Licht andere achtergrond (header, modals) */
+  --card: #2a2a2a;        /* Achtergrond van itemkaarten */
+  --border: #4a3a1a;      /* Randkleur (warm bruin, RS-stijl) */
+  --gold: #c8a84b;        /* Primaire goudkleur */
+  --gold-light: #e8c86b;  /* Lichtere goudtint voor hover/namen */
+  --text: #e0d5b0;        /* Hoofdtekstkleur */
+  --text-dim: #9a8a6a;    /* Gedimd voor labels en metadata */
+  --red: #c0392b;         /* Foutmeldingen en actieve favorieten */
+  --green: #27ae60;       /* Prijsweergave */
+  --shadow: 0 2px 8px rgba(0,0,0,0.5); /* Standaard schaduw */
 }
 
+/* Licht thema (actief via data-theme="light" op <html>) */
 [data-theme="light"] {
   --bg: #f5f0e0;
   --bg2: #ebe5d0;
@@ -22,51 +28,68 @@
   --shadow: 0 2px 8px rgba(0,0,0,0.15);
 }
 
+
+/* =============================================
+   RESET & BASIS
+   ============================================= */
+
+/* Universele reset: consistente box-sizing en geen standaard marges */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+/* Basislayout van de pagina */
 body {
   background: var(--bg);
   color: var(--text);
   font-family: Georgia, serif;
   font-size: 16px;
   min-height: 100vh;
+  /* Vloeiende overgang bij wisselen van thema */
   transition: background 0.3s, color 0.3s;
 }
 
 
+/* =============================================
+   HEADER
+   ============================================= */
+
+/* Sticky header die bovenaan blijft bij scrollen */
 header {
   background: var(--bg2);
   border-bottom: 2px solid var(--border);
   padding: 16px 24px;
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 10; /* Boven de itemkaarten */
   box-shadow: var(--shadow);
 }
 
+/* Hoofdtitel in goud */
 .header-inner h1 {
   font-size: 1.8rem;
   color: var(--gold);
   font-weight: 600;
 }
 
+/* Ondertitel onder de hoofdtitel */
 .subtitle {
   font-size: 0.85rem;
   color: var(--text-dim);
   margin-bottom: 12px;
 }
 
+/* Flexcontainer voor zoekbalk, filters en themaknop */
 .controls {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* Omslaan op kleinere schermen */
   gap: 8px;
   align-items: center;
 }
 
+/* Gedeelde stijl voor zoekveld en dropdowns */
 .controls input,
 .controls select {
   background: var(--bg);
@@ -78,14 +101,17 @@ header {
   font-size: 0.9rem;
 }
 
+/* Zoekveld neemt beschikbare ruimte in */
 .controls input { flex: 1; min-width: 180px; }
 
+/* Goudkleurige rand bij focus */
 .controls input:focus,
 .controls select:focus {
   outline: none;
   border-color: var(--gold);
 }
 
+/* Thema-wisselknop (licht/donker) */
 #themeToggle {
   background: var(--card);
   border: 1px solid var(--border);
@@ -96,12 +122,18 @@ header {
 }
 
 
+/* =============================================
+   HOOFDINHOUD
+   ============================================= */
+
+/* Gecentreerde contentkolom met maximale breedte */
 main {
   max-width: 1100px;
   margin: 0 auto;
   padding: 20px 16px;
 }
 
+/* Balk met itemteller en favorieten-teller */
 .stats-bar {
   display: flex;
   justify-content: space-between;
@@ -111,6 +143,11 @@ main {
 }
 
 
+/* =============================================
+   TABBLADEN
+   ============================================= */
+
+/* Tabbladenrij boven het itemraster */
 .tabs {
   display: flex;
   gap: 4px;
@@ -119,6 +156,7 @@ main {
   padding-bottom: 4px;
 }
 
+/* Standaard (inactief) tabblad */
 .tab {
   background: none;
   border: 1px solid transparent;
@@ -127,11 +165,12 @@ main {
   cursor: pointer;
   font-family: inherit;
   font-size: 0.95rem;
-  border-radius: 4px 4px 0 0;
+  border-radius: 4px 4px 0 0; /* Alleen bovenhoeken afgerond */
 }
 
 .tab:hover { color: var(--gold); }
 
+/* Actief tabblad krijgt achtergrond en goudkleurige tekst */
 .tab.active {
   color: var(--gold);
   background: var(--card);
@@ -140,12 +179,21 @@ main {
 }
 
 
+/* =============================================
+   ITEMRASTER
+   ============================================= */
+
+/* Responsief raster dat automatisch kolommen aanmaakt */
 .items-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 12px;
 }
 
+
+/* =============================================
+   ITEMKAARTEN
+   ============================================= */
 
 .item-card {
   background: var(--card);
@@ -154,23 +202,26 @@ main {
   padding: 12px;
   cursor: pointer;
   transition: border-color 0.2s, transform 0.15s;
-  position: relative;
+  position: relative; /* Anker voor de favorietenknop */
 }
 
+/* Kaart licht omhoog bij hover */
 .item-card:hover {
   border-color: var(--gold);
   transform: translateY(-2px);
 }
 
+/* Pixelart-sprite gecentreerd bovenaan de kaart */
 .item-card img {
   display: block;
   margin: 0 auto 8px;
   width: 48px;
   height: 48px;
   object-fit: contain;
-  image-rendering: pixelated;
+  image-rendering: pixelated; /* Scherpe pixels, geen blur */
 }
 
+/* Itemnaam in lichtgoud */
 .item-card .item-name {
   font-size: 0.95rem;
   font-weight: 600;
@@ -179,6 +230,7 @@ main {
   text-align: center;
 }
 
+/* Secundaire info zoals categorie of beschrijving */
 .item-card .item-meta {
   font-size: 0.78rem;
   color: var(--text-dim);
@@ -186,6 +238,7 @@ main {
   line-height: 1.5;
 }
 
+/* Prijs in groen onderaan de kaart */
 .item-card .item-price {
   font-size: 0.9rem;
   color: var(--green);
@@ -194,6 +247,7 @@ main {
   font-weight: 600;
 }
 
+/* Favorietenknop (hartje) rechtsboven op de kaart */
 .fav-btn {
   position: absolute;
   top: 6px;
@@ -202,35 +256,51 @@ main {
   border: none;
   cursor: pointer;
   font-size: 1rem;
-  opacity: 0.5;
+  opacity: 0.5; /* Half zichtbaar als standaard */
   transition: opacity 0.2s, transform 0.15s;
 }
 
+/* Volledig zichtbaar en iets groter bij hover of actief */
 .fav-btn:hover, .fav-btn.active { opacity: 1; transform: scale(1.2); }
+/* Rood hartje als het item een favoriet is */
 .fav-btn.active { color: var(--red); }
 
 
+/* =============================================
+   STATUSMELDINGEN
+   ============================================= */
+
+/* Gecentreerde melding (laden of fout) */
 .status-msg {
   text-align: center;
   padding: 40px;
   color: var(--text-dim);
 }
 
+/* Rode tekst voor foutmeldingen */
 .status-msg.error { color: var(--red); }
+/* Verbergt elk element volledig (gebruikt door JavaScript) */
 .hidden { display: none !important; }
+/* Melding bij lege favorietenlijst */
 .no-fav-msg { text-align: center; color: var(--text-dim); padding: 40px; }
 
 
+/* =============================================
+   MODALS
+   ============================================= */
+
+/* Halfransparant donker overlay achter de modal */
 .modal {
   position: fixed;
-  inset: 0;
+  inset: 0; /* Vult het volledige scherm */
   background: rgba(0,0,0,0.7);
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 100;
+  z-index: 100; /* Boven alles */
 }
 
+/* Witte doos in het midden van de overlay */
 .modal-content {
   background: var(--bg2);
   border: 2px solid var(--border);
@@ -238,13 +308,15 @@ main {
   padding: 24px;
   max-width: 480px;
   width: 90%;
-  position: relative;
+  position: relative; /* Anker voor sluitknop */
   max-height: 80vh;
-  overflow-y: auto;
+  overflow-y: auto; /* Scrollbaar bij veel inhoud */
 }
 
+/* Kleinere variant voor de notitiemodal */
 .modal-content.small { max-width: 360px; }
 
+/* Sluitknop rechtsboven in de modal */
 .modal-content button#modalClose,
 .modal-content button#noteClose {
   position: absolute;
@@ -257,6 +329,7 @@ main {
   cursor: pointer;
 }
 
+/* Grote sprite in de detailmodal */
 #modalBody img {
   display: block;
   margin: 0 auto 12px;
@@ -265,6 +338,7 @@ main {
   image-rendering: pixelated;
 }
 
+/* Itemnaam als titel in de modal */
 #modalBody h2 {
   color: var(--gold);
   text-align: center;
@@ -272,10 +346,13 @@ main {
   margin-bottom: 12px;
 }
 
+/* Tabel met itemdetails (stats, prijs, enz.) */
 #modalBody table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
 #modalBody table td { padding: 5px 8px; border-bottom: 1px solid var(--border); }
+/* Eerste kolom (labels) smaller en gedimd */
 #modalBody table td:first-child { color: var(--text-dim); width: 40%; }
 
+/* Cursieve beschrijvingstekst onderaan de modal */
 #modalBody .modal-desc {
   margin-top: 12px;
   font-style: italic;
@@ -283,6 +360,7 @@ main {
   font-size: 0.9rem;
 }
 
+/* Tekstvak in de notitiemodal */
 #noteInput {
   width: 100%;
   background: var(--bg);
@@ -292,14 +370,15 @@ main {
   padding: 8px;
   font-family: inherit;
   font-size: 0.9rem;
-  resize: vertical;
+  resize: vertical; /* Alleen verticaal aanpasbaar */
   min-height: 80px;
   margin: 12px 0 6px;
 }
 
+/* Opslaanknop in goud */
 #noteSave {
   background: var(--gold);
-  color: #1a1a00;
+  color: #1a1a00; /* Donkere tekst op gouden knop */
   border: none;
   border-radius: 4px;
   padding: 8px 20px;
@@ -309,11 +388,19 @@ main {
 }
 
 #noteSave:hover { background: var(--gold-light); }
+/* Kleine rode foutmelding bij lege notitie */
 .form-error { color: var(--red); font-size: 0.82rem; margin-bottom: 6px; }
 
 
+/* =============================================
+   RESPONSIVE (max 600px)
+   ============================================= */
+
 @media (max-width: 600px) {
+  /* Kleinere titel op mobiel */
   .header-inner h1 { font-size: 1.3rem; }
+  /* Smaller minimumkaartenformaat op mobiel */
   .items-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+  /* Zoekveld mag kleiner worden op mobiel */
   .controls input { min-width: 120px; }
 }
