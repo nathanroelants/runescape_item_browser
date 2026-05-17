@@ -4,25 +4,35 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>RS Item Browser</title>
+
+  <!-- Hoofdstijlblad van de applicatie -->
   <link rel="stylesheet" href="/src/css/style.css" />
+
+  <!-- Google Fonts preconnect voor snellere laadtijd -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <!-- Middeleeuwse en sierlijke lettertypes passend bij het RuneScape-thema -->
   <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 </head>
 <body>
 
+  <!-- Paginaheader met titel en bedieningselementen -->
   <header>
     <div class="header-inner">
       <h1>RS Item Browser</h1>
       <p class="subtitle">Search the Grand Exchange</p>
     </div>
 
+    <!-- Zoek- en filterbalk -->
     <div class="controls">
+      <!-- Zoekveld voor items op naam -->
       <input type="text" id="searchInput" placeholder="Search items..." />
 
+      <!-- Dropdown om te filteren op categorie (wordt dynamisch gevuld via JS) -->
       <select id="categoryFilter">
         <option value="">All Categories</option>
       </select>
 
+      <!-- Dropdown om de itemlijst te sorteren -->
       <select id="sortSelect">
         <option value="name-asc">Name A→Z</option>
         <option value="name-desc">Name Z→A</option>
@@ -30,48 +40,67 @@
         <option value="price-desc">Price High→Low</option>
       </select>
 
+      <!-- Knop om te wisselen tussen licht en donker thema -->
       <button id="themeToggle" title="Toggle theme">🌑</button>
     </div>
   </header>
 
   <main>
+    <!-- Statusbalk met het aantal geladen items en favorieten -->
     <div class="stats-bar">
       <span id="itemCount">Loading items...</span>
       <span id="favCount">❤️ <span id="favNum">0</span> favourites</span>
     </div>
 
+    <!-- Tabbladen om te wisselen tussen alle items en favorieten -->
     <div class="tabs">
       <button class="tab active" data-tab="items">All Items</button>
       <button class="tab" data-tab="favourites">My Favourites</button>
     </div>
 
+    <!-- Raster met alle items (gevuld via JavaScript) -->
     <div id="itemsGrid" class="items-grid"></div>
 
+    <!-- Favorieten-paneel (standaard verborgen) -->
     <div id="favouritesPanel" class="hidden">
+      <!-- Raster met favoriete items -->
       <div id="favouritesGrid" class="items-grid"></div>
+      <!-- Melding als er nog geen favorieten zijn -->
       <p id="noFavMsg" class="no-fav-msg hidden">No favourites yet. Click ❤️ on an item!</p>
     </div>
 
+    <!-- Laadmelding zichtbaar tijdens het ophalen van data -->
     <div id="loadingMsg" class="status-msg">Loading items from the Grand Exchange...</div>
+    <!-- Foutmelding bij een mislukt API-verzoek (standaard verborgen) -->
     <div id="errorMsg" class="status-msg error hidden">Failed to load items. Please try again.</div>
   </main>
 
+  <!-- Detailmodal voor een geselecteerd item (standaard verborgen) -->
   <div id="modal" class="modal hidden">
     <div class="modal-content">
+      <!-- Sluitknop van de detailmodal -->
       <button id="modalClose">✕</button>
+      <!-- Inhoud van de modal wordt dynamisch ingevuld via JavaScript -->
       <div id="modalBody"></div>
     </div>
   </div>
+
+  <!-- Modal voor het toevoegen van een notitie bij een item (standaard verborgen) -->
   <div id="noteModal" class="modal hidden">
     <div class="modal-content small">
+      <!-- Sluitknop van de notitiemodal -->
       <button id="noteClose">✕</button>
       <h3>Add a note</h3>
+      <!-- Tekstvak voor de notitie, maximaal 200 tekens -->
       <textarea id="noteInput" placeholder="Write a note about this item..." maxlength="200"></textarea>
+      <!-- Validatiefout als het tekstvak leeg wordt opgeslagen (standaard verborgen) -->
       <p id="noteError" class="form-error hidden">Note cannot be empty!</p>
+      <!-- Knop om de notitie op te slaan -->
       <button id="noteSave">Save note</button>
     </div>
   </div>
 
+  <!-- Hoofd-JavaScript als ES-module -->
   <script type="module" src="/src/js/main.js"></script>
 </body>
 </html>
