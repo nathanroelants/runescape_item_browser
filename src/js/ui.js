@@ -56,7 +56,7 @@ export const createItemCard = (item, onFavClick, onCardClick) => {
     <!-- Secundaire metadata: categorie, members-status en item-ID -->
     <div class="item-meta">
       <span>${item.category}</span><br/>
-      <span>${item.members ? '👑 Members' : 'Free to play'}</span><br/>
+      <span>${item.members ? ' Members' : 'Free to play'}</span><br/>
       <span>ID: ${item.id}</span>
     </div>
 
@@ -64,7 +64,7 @@ export const createItemCard = (item, onFavClick, onCardClick) => {
     <div class="item-price">${formatPrice(item.currentPrice)}</div>
 
     <!-- Notitiebadge, alleen zichtbaar als er een notitie is opgeslagen -->
-    ${note ? `<div class="item-note">📝 ${note}</div>` : ''}
+    ${note ? `<div class="item-note"> ${note}</div>` : ''}
   `;
 
   /* Klik op de kaart zelf → open detailmodal
