@@ -125,7 +125,7 @@ export const renderModal = (item, modalBody) => {
     <!-- Statstabel met alle relevante itemgegevens -->
     <table>
       <tr><td>Category</td><td>${item.category}</td></tr>
-      <tr><td>Members</td><td>${item.members ? 'Yes 👑' : 'No'}</td></tr>
+      <tr><td>Members</td><td>${item.members ? 'Yes' : 'No'}</td></tr>
       <tr><td>Buy price</td><td>${formatPrice(item.priceHigh)}</td></tr>
       <tr><td>Sell price</td><td>${formatPrice(item.priceLow)}</td></tr>
       <tr><td>High alch</td><td>${item.highalch ? formatPrice(item.highalch) : '—'}</td></tr>
