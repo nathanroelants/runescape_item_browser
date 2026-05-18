@@ -22,35 +22,35 @@ OSRS wiki Real-time Prices API https://oldschool.runescape.wiki/w/RuneScape:Real
 
 Technische vereisten:
 
-DOM manipulatie:                       locatie              lijnen                  
-- Elementen selecteren                 src/js/ui            15-18
-- Elementen manipuleren                src/js/ui            29-85
-- Events aan elementen koppelen        src/js/ui            72,79
+DOM manipulatie:           &emsp;            locatie              lijnen                  
+- Elementen selecteren       &emsp;          src/js/ui            15-18
+- Elementen manipuleren            &emsp;    src/js/ui            29-85
+- Events aan elementen koppelen   &emsp;     src/js/ui            72,79
 
 Modern JavaScript:  
-- Gebruik van constanten               src/js/main          117-120
-- Template literals                    src/js/ui            72-73
-- Iteratie over arrays                 src/js/main          101-106
-- Array methodes                       src/js/main          98
-- Arrow functions                      src/js/main          97-98
-- Conditional operator                 src/js/main          138
-- Callback functions                   src/js/main          159
-- Promises                             src/js/api           66
-- Async & Await                        src/js/api           61,66
-- Observer API (1 is voldoende)        src/js/main          301-314
+- Gebruik van constanten&emsp;               src/js/main          117-120
+- Template literals           &emsp;         src/js/ui            72-73
+- Iteratie over arrays              &emsp;   src/js/main          101-106
+- Array methodes           &emsp;            src/js/main          98
+- Arrow functions               &emsp;       src/js/main          97-98
+- Conditional operator     &emsp;            src/js/main          138
+- Callback functions        &emsp;           src/js/main          159
+- Promises                 &emsp;            src/js/api           66
+- Async & Await            &emsp;            src/js/api           61,66
+- Observer API (1 is voldoende)  &emsp;      src/js/main          301-314
 
 Data & API:  
-- Fetch om data op te halen            src/js/api           67-68
-- JSON manipuleren en weergeven        src/js/api           75-76
+- Fetch om data op te halen     &emsp;       src/js/api           67-68
+- JSON manipuleren en weergeven  &emsp;      src/js/api           75-76
 
 Opslag & validatie:  
-- Formulier validatie                  src/js/main          274-292
-- Gebruik van LocalStorage             src/js/storage       22-25
+- Formulier validatie        &emsp;          src/js/main          274-292
+- Gebruik van LocalStorage    &emsp;         src/js/storage       22-25
 
 Styling & layout:  
-- Basis HTML layout                    src/css/style
-- Basis CSS                            src/css/style
-- Gebruiksvriendelijke elementen       src/js/main          163-174
+- Basis HTML layout         &emsp;           src/css/style
+- Basis CSS                  &emsp;          src/css/style
+- Gebruiksvriendelijke elementen  &emsp;     src/js/main          163-174
 
 Tooling & structuur:  
 - Project is opgezet met Vite 
