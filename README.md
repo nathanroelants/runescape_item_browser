@@ -62,7 +62,7 @@ Tooling & structuur:
 Installatie:
 - download de code van https://github.com/nathanroelants/runescape_item_browser
 - extract de files
-- open de folder runescape_item_browser-main in terminal
+- open de folder in de zip folder (runescape_item_browser-...) in terminal
 - run:
 -  npm install
 -  npm run dev
