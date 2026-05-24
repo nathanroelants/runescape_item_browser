@@ -77,7 +77,7 @@ Screenshots:
 
 Bronnen:
 
-- https://runescape.wiki/w/Application_programming_interface
+- https://oldschool.runescape.wiki/w/RuneScape:Real-time_Prices
 - https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
 - https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API
 - https://vitejs.dev/
