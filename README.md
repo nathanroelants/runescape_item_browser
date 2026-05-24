@@ -1,4 +1,4 @@
-# RS Item Browser
+# OSRS Item Browser
 
 Webapplicatie voor het vak Web Advanced. Je kan items van de OSRS Grand Exchange opzoeken, filteren en opslaan als favoriet.
 
